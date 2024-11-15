@@ -9,13 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundStyle(.tint)
+                Text("ShareLink Test Project")
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    ShareLink(item: "This is a sample text to share!") {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 
